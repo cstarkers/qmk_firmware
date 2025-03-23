@@ -35,6 +35,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *            `----------------------------------'           '------''---------------------------'
  */
 
+
+
+
+
 [NORMAL] = LAYOUT(
   KC_GRV,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_BSLS,
   KC_ESC,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  KC_BSPC,
@@ -67,9 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 #if defined(ENCODER_MAP_ENABLE)
-//F16 - F18 are used on NORMAL because they are supported on all OSs and are unlikely to clober anything.
-//My thinking is that they should be software mapped, eg to next pane in tmux.conf.
-//F13 - F15 are used in RAISED as they are slightly more likely to already be in use (though still unlikely)
+//The right encoder is intended to be used in software macros
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
     [NORMAL] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU),  ENCODER_CCW_CW(A(S(KC_F2)), A(S(KC_F3)))  },
     [RAISED] = { ENCODER_CCW_CW(KC_NO, KC_NO),  ENCODER_CCW_CW(A(S(KC_F5)), A(S(KC_F6)))  },
